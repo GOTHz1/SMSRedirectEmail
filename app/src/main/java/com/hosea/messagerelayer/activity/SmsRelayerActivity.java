@@ -179,10 +179,10 @@ public class SmsRelayerActivity extends BaseActivity
         View view = LayoutInflater.from(this).inflate(R.layout.dialog_edit, null, false);
         final EditText mobileEdit = (EditText) view.findViewById(R.id.dialog_edit);
 
-        String mobileText = mMobileText.getText().toString();
-        if (!mobileText.equals("点击设置")) {
-            mobileEdit.setText(mobileText);
-        }
+//        String mobileText = mMobileText.getText().toString();
+//        if (!mobileText.equals("点击设置")) {
+//            mobileEdit.setText(mobileText);
+//        }
 
         builder.setView(view);
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -198,8 +198,8 @@ public class SmsRelayerActivity extends BaseActivity
                     mNativeDataManager.setInnerMobile(mobileEdit.getText().toString());
                     mMobileTextSelf.setText(mobileEdit.getText());
                 }else  if (v.getId() == R.id.layout_mobile){
-                    mNativeDataManager.setInnerMobile(mobileEdit.getText().toString());
-                    mMobileTextSelf.setText(mobileEdit.getText());
+                    mNativeDataManager.setObjectMobile(mobileEdit.getText().toString());
+                    mMobileText.setText(mobileEdit.getText());
                 }   else {
                     mNativeDataManager.setInnerRule(mobileEdit.getText().toString());
                     mMobileTextRule.setText(mobileEdit.getText());
